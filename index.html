@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    
+
+<meta name="description" content="Широкий ассортимент декоративных панелей, ламината и бамбуковых покрытий для вашего дома. Высокое качество и доступные цены. Доставка по всей стране.">
+
+<meta name="keywords" content="декор, бамбуковые панели, ламинат, отделка стен, интерьер">
+
+<meta property="og:title" content="Современный декор для вашего интерьера">
+<meta property="og:description" content="Загляните в наш каталог отделочных материалов.">
+<meta property="og:type" content="website">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DecorPro Kazakhstan: Гибкий мрамор и Бамбуковые панели</title>
+    <link rel="icon" href="uidownload.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        html{
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background-color: #1a1c24;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 1. Увеличенная Hero-секция */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('decor.jpg.jpeg') no-repeat center center/cover;
+            height: 90vh; /* Увеличили высоту */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-container h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        h1 {
+    font-size: 60px;
+    /* 1. Сначала задаем сам градиент */
+    background: linear-gradient(45deg, white, grey);
+    
+    /* 2. Применяем обрезку фона по форме букв */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* 3. Делаем основной цвет текста прозрачным */
+    -webkit-text-fill-color: transparent;
+    
+    /* Фолбэк для старых браузеров (опционально) */
+    color: black; 
+}
+
+        .hero-container p {
+            max-width: 650px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* 2. Секция О компании с "ямочкой" */
+        .about-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-line {
+            width: 50px;
+            height: 2px;
+            background: #fff;
+            margin-bottom: 30px;
+            opacity: 0.6;
+        }
+
+        .about-image-wrapper {
+            flex: 1;
+            min-width: 350px;
+            position: relative; /* Для позиционирования ямочки */
+        }
+
+        .about-img {
+            width: 100%;
+            border-radius: 30px;
+            display: block;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 15%);
+        }
+
+        /* Та самая ямочка (вырез) */
+        .image-cutout {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 60px;
+            height: 60px;
+            background-color: #1a1c24; /* Цвет фона страницы */
+            border-bottom-right-radius: 30px; /* Скругление внутрь */
+            z-index: 2;
+        }
+
+        /* 3. Карточки с ховером (предыдущий вариант) */
+        .catalog-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 60px;
+        }
+
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .card {
+            width: calc(33.333% - 20px);
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.05); /* Легкий фон карточки */
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(255,255,255,0.05);
+            will-change: transform;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Эффект при наведении на карточку */
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .image-container {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .image-container img {
+            transform: scale(1.05); /* Легкое увеличение фото */
+        }
+
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 21px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card-info {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 8px;
+        }
+
+        /* Прозрачные кнопки */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-hero {
+            padding: 16px 45px;
+            font-size: 17px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Адаптивность */
+       /* Общий медиа-запрос для мобильных (до 768px) */
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* На мобильных лучше не фиксировать высоту 90vh, если текста много */
+        padding: 80px 20px;
+    }
+
+    .about-section {
+        gap: 30px; /* Уменьшаем расстояние между текстом и фото */
+        padding: 60px 20px;
+    }
+
+    .about-title {
+        font-size: 28px; /* Огромные заголовки плохо смотрятся на малых экранах */
+    }
+
+    .contact-map {
+        height: 250px; /* Уменьшаем карту, чтобы она не занимала весь экран */
+    }
+}
+
+/* Исправление для маленьких экранов (до 400px) */
+@media (max-width: 400px) {
+    .about-image-wrapper {
+        min-width: 100%;
+    }
+    
+    .btn {
+        width: 100%; /* Кнопки на всю ширину удобнее нажимать пальцем */
+    }
+}
+        */
+        .about-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .about-content {
+            flex: 1.2;
+            min-width: 300px;
+        }
+
+        .about-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .about-line {
+            width: 40px;
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+            margin-bottom: 30px;
+        }
+
+        .about-text-main {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .about-list {
+            list-style: none;
+        }
+
+        .about-list-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .about-list-item span {
+            color: #007bff; /* Синий цвет ромбика */
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .sub-list {
+            margin-left: 30px;
+            margin-top: 5px;
+            font-size: 15px;
+            color: rgba(255,255,255,0.6);
+        }
+          .production-section {
+            background: #12141a;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .video-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .video-container video, .video-container img {
+            width: 100%;
+            display: block;
+        }
+         .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 4px solid #007bff;
+        }
+        .feature-card h3 { margin-bottom: 15px; font-size: 20px; }
+        .feature-card p { font-size: 15px; color: rgba(255,255,255,0.7); }
+  .contacts-footer {
+            background: #0f1115;
+            padding: 80px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .contacts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        .contact-info { flex: 1; min-width: 300px; }
+        .contact-map { flex: 1.5; min-width: 300px; height: 350px; border-radius: 20px; overflow: hidden; }
+        
+        @media (max-width: 900px) {
+            .card { width: calc(50% - 15px); }
+        }
+        @media (max-width: 600px) {
+            .card { width: 100%; }
+        }
+        .button-container{
+            text-align: left;
+            padding: 20px;
+        }
+        .telegram-button{
+            display: inline-flex;
+            align-items:center ;
+            background-color: #0099cc;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .telegram-button img{
+            width: 20px !important;
+            height: 20px !important;
+            margin-left: 8px;
+            display: block;
+        }
+        .telegram-button:hover{
+            box-shadow: 0 0 15px rgba(0,153,204,0.5);
+            filter: brightness(1.1);
+
+            }
+        
+        :root{
+            --accent-color:#007bff;
+            --bg-main:#1a1c24;
+            --bg-card: rgba(255,255,255,0.05);
+            --radius-lg:30px;
+            --translation-smooth:all 0.4s cubic-bezier(0.165,0.84,0.44,1);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Гибкий мрамор<br>Бамбуковые панели</h1>
+            <p>Прямые поставки современных отделочных материалов для интерьеров. Стиль, качество, простота монтажа.</p>
+            <a href="https://wa.me/77002538330" class="btn btn-hero">Запросить прайс / Стать дилером</a>
+        </div>
+    </section>
+
+   <section class="about-section">
+        <div class="about-content">
+            <h2 class="about-title">О компании</h2>
+            <div class="about-line"></div>
+            <p class="about-text-main">
+                DecorPro Kazakhstan — надёжный производитель современных отделочных материалов для интерьеров. С 2022 года мы развиваем рынок гибкого мрамора, бамбуковых панелей и декоративных решений, предлагая прямые поставки по всей стране.
+            </p>
+            
+            <div class="about-list">
+                <div class="about-list-item"><span>◆</span> Более 100 магазинов по Казахстану уже продают нашу продукцию</div>
+                <div class="about-list-item"><span>◆</span> Мы заняли уверенную позицию на рынке благодаря качеству, стилю и стабильности</div>
+                <div class="about-list-item"><span>◆</span> С нами работают:</div>
+                <div class="sub-list">
+                    — Застройщики и строительные компании<br>
+                    — Оптовики, дилеры и архитектурные бюро<br>
+                    — Дизайнеры интерьеров и проектные студии<br><br>
+                </div>
+                <div class="about-list-item">
+Мы предлагаем материалы, которые легко монтируются, эффектно выглядят и соответствуют современным требованиям по дизайну и долговечности.</div>
+                <div class="about-list-item">DecorPro — это стиль, надёжность и партнёрство.
+Присоединяйтесь к числу тех, кто уже выбрал нас.</div>
+            </div>
+        </div>
+
+        <div class="about-image-wrapper">
+            <div class="image-cutout"></div> <img src="dec.jpg.jpeg" alt="Интерьер DecorPro" class="about-img">
+        </div>
+    </section>
+
+    <section class="catalog-section">
+        <h2 class="main-title">Наша продукция:</h2>
+        
+        <div class="grid-container">
+            
+            <div class="card">
+                <div class="image-container"><img src="gibkiymramor.jpeg" alt="Мрамор"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Гибкий мрамор</h3>
+                    <p class="card-info">Размер: 1.22 × 2.80 м</p>
+                    <p class="card-info">Толщина: от 2 до 3 мм</p>
+                    <a href="gibkiy.html" class="btn">Каталог</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container"><img src="bambukpaneli.jpeg" alt="Бамбук"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Бамбуковые панели</h3>
+                    <p class="card-info">Размер: 1.15 × 2.90 м</p>
+                    <p class="card-info">Толщина: 5 мм</p>
+                    <a href="bambukpanel.html" class="btn">Каталог</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container"><img src="paneliskala.jpeg" alt="Скала"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Панели Скала</h3>
+                    <p class="card-info">Декоративные пенополиуретановые панели скала
+Как для фасадов так и для внутренней отделки</p>
+                    <a href="paneliskala.html" class="btn">Каталог</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container"><img src="gibkiy.jpeg" alt="Камень"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Гибкий камень</h3>
+                    <p class="card-info">Современный, декоративный отделочный материал. Легкий прочный, износостойкий и долговечный.</p>
+                    <p class="card-info">
+Универсальный, вы можете применить его для облицовки фасадов и отделки и декорирования интерьеров, элементов и форм.</p>
+                    <a href="gibkiykamen.html" class="btn">Каталог</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container"><img src="laminat.jpeg" alt="Фасад"></div>
+                <div class="card-content">
+                    <h3 class="card-title">SPC Ламинат</h3>
+                    <p class="card-info">ИSPC – это многослойное напольное покрытие, состоящее из карбоната кальция (70-80%) и ПВХ-соединения (20-30%).</p>
+                    <a href="laminat.html" class="btn">Каталог</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container"><img src="akupaneli.jpeg" alt="Премиум"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Акустические панели</h3>
+                    <p class="card-info">Декоративно-акустические материалы - особый класс строительных отделочных материалов. Они применяются, когда важно не просто получить презентабельный интерьер, но и обеспечить хорошую акустику. Специализированные акустические потолки и стеновые панели в зависимости от поставленных задач способны эффективно поглощать или отражать звук.
+</p>
+                    <a href="akupaneli.html" class="btn">Каталог</a>
+                </div>
+            </div>
+             <div class="card">
+                <div class="image-container"><img src="luvery.jpeg" alt="Фасад"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Луверы</h3>
+                    <p class="card-info">Длина: 2.90 м</p>
+                    <p class="card-info">Ширина: от 12см до 40см</p>
+                    <p class="card-info">(Подходит как для полной отделки помещения так и для дополнения к бамбук панелям)</p>
+                    <a href="luvery.html" class="btn">Каталог</a>
+                </div>
+            </div>
+             <div class="card">
+                <div class="image-container"><img src="komplekt.jpeg" alt="Фасад"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Комплектующие для монтажа панелей</h3>
+                    <a href="komplekt.html" class="btn">Каталог</a>
+                </div>
+            </div>
+             <div class="card">
+                <div class="image-container"><img src="kley.jpeg" alt="Фасад"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Универсальный монтажный клей</h3>
+                  <p class="card-info">Монтажный клей без гвоздей.
+Надёжно фиксирует панели, молдинги, плинтуса и другие элементы без сверления. Быстро схватывается, влагостойкий, подходит для гибкого мрамора и декоративных материалов. Объём: 300 мл</p>
+                  
+                </div>
+            </div>
+                </div>
+    </section>
+
+<section class="production-section">
+        <h2 class="about-title">Наше производство</h2>
+        <p>Используем современное оборудование для создания материалов премиального качества</p>
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="proiz2.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
+    </section>
+    <section>
+        <h2 style="text-align: center; margin-top: 50px;">Преимущества материалов</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Эстетика и текстуры</h3>
+                <p>Материалы имитируют натуральные текстуры, придавая интерьеру изысканный вид.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Простота монтажа</h3>
+                <p>Легко и быстро монтируются, что позволяет сэкономить время и силы при отделке.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Устойчивость</h3>
+                <p>Влагостойкость и устойчивость к перепадам температур. Не теряют свойств со временем.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Прямые поставки</h3>
+                <p>Обеспечиваем выгодные цены и быструю доставку напрямую с завода без посредников.</p>
+            </div>
+        </div>
+    </section>
+      <footer class="contacts-footer">
+        <div class="contacts-container">
+            <div class="contact-info">
+                <h2 class="about-title">Наши контакты</h2>
+                <div class="about-line"></div>
+                <p style="margin-bottom: 20px;">Напишите нам в WhatsApp:</p>
+                <h3 style="color: #007bff; margin-bottom: 10px;">8 (700) 253-83-30</h3>
+                <h3 style="color: #007bff; margin-bottom: 30px;">8 (776) 653-88-77</h3>
+                <p>Email: <strong>corporate.mramor@mail.ru</strong></p>
+                <div class="button-container">
+                <a href="https://t.me/DecorProKz" class="telegram-button">Наш Telegram <img src="telegram.png" alt="telegram">
+                    
+                </a>
+            </div>
+
+            </div>
+           
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d185854.3468508828!2d76.84462045!3d43.238949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e7d16c5cbab%3A0x3d44668fad986d76!2z0JDQu9C80LDRgtGL!5e0!3m2!1sru!2skz!4v1712245000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </footer>
+
+    
+
+</body>
+</html>
