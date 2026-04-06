@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="icon" href="uidownload.png">
+    <style>
+        /* Основные стили страницы (темный фон как на фото) */
+        body {
+            background-color: #1a1d21; /* Темно-серый фон */
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрирование по горизонтали */
+            min-height: 100vh;
+        }
+
+        /* Стиль для заголовка */
+        .page-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 30px; /* Отступ сверху */
+            margin-bottom: 30px; /* Отступ до кнопок */
+            text-align: center;
+        }
+
+        /* Контейнер для кнопок, задающий отступы по краям */
+        .buttons-container {
+            width: 80%; /* Занимает 80% ширины (автоматически дает по 10% отступа по бокам) */
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Расстояние между кнопками */
+            align-items: center;
+        }
+
+        /* Общий стиль для растянутых кнопок/ссылок */
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Текст и иконка по центру */
+            width: 100%; /* Растягивается на всю ширину контейнера (80%) */
+            padding: 35px;
+            border-radius: 10px;
+            text-decoration: none; /* Убирает подчеркивание ссылки */
+            font-weight: bold;
+            transition: opacity 0.2s; /* Эффект при наведении */
+        }
+
+        .social-button:hover {
+            opacity: 0.8;
+        }
+
+        /* Стили для иконок внутри кнопок */
+        .button-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px; /* Отступ от иконки до текста */
+        }
+
+        /* Специфические цвета для каждой кнопки (взяты из вашего примера) */
+        .btn-whatsapp {
+            background-color: #25D366; /* Зеленый WhatsApp */
+            color: white;
+            border-radius: 50px; /* Сильно округлые края */
+            margin-top: auto; /* Прижимает к низу */
+            margin-bottom: 20px;
+        }
+
+        .btn-max {
+            display:inline-flex; align-items:center; 
+   background:linear-gradient(135deg, #00D4FF, #7B68EE, #8B00FF);
+   color:white;  text-decoration:none; font-weight:600;
+   font-family:system-ui, sans-serif; font-size:16px;
+   box-shadow:0 4px 15px rgba(123,104,238,0.3);
+   transition:all 0.3s ease;
+           
+            border-radius: 50px; /* Сильно округлые края */
+            margin-top: auto; /* Прижимает к низу */
+            margin-bottom: 20px;
+        }
+
+        /* Синяя полукруглая кнопка внизу (как на фото) */
+        .btn-bottom-blue {
+            background-color: #00a0e9;
+            color: white;
+            border-radius: 50px; /* Сильно округлые края */
+            margin-top: auto; /* Прижимает к низу */
+            margin-bottom: 20px;
+        }
+        .btn-bottom-vk{
+         background-color: #036b9b;
+            color: white;
+            border-radius: 50px; /* Сильно округлые края */
+            margin-top: auto; /* Прижимает к низу */
+            margin-bottom: 20px;
+        }   
+            h1 {
+    font-size: 60px;
+    background: linear-gradient(45deg, white, grey);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: black; 
+}
+
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="page-header"><h1>Соц-сети наших дилеров</h1></div>
+
+    <div class="buttons-container">
+
+            
+        <a href="https://wa.me/77002538330" class="social-button btn-whatsapp">
+            <img src="whatsapp.png" alt="WA" class="button-icon">
+            WhatsApp
+        </a>
+
+        <a href="https://max.ru/u/f9LHodD0cOJjUFLw1HUadXg5JIRLc7Cf-MaiuC7UyBFdUYUzcjTiPLBHQ5k" class="social-button btn-max">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/>
+  </svg>
+            
+            Написать в MAX
+        </a>
+
+      
+         <a href="https://vk.ru/id1095373485" class="social-button btn-bottom-vk">
+            <img src="vk.png" alt="tg" class="button-icon">
+            Вконтакте
+        </a>
+
+
+    </div>
+
+</body>
+</html>
